@@ -13,7 +13,7 @@ Pada Tutorial 1, Saya mempelajari bagaimana membuat suatu web menggunakan framew
 Issue Tracker merupakan fitur yang disediakan oleh GitHub untuk menyimpan permasalahan yang ditemukan oleh pengguna dan pengguna juga dapat melihat perkembangan dari masalah tersebut. Dengan begitu masalah yang ada jelas dan pengguna lain juga dapat memantaunya. Issue Tracker dapat membantu para kolaborator dalam menyelesaikan masalah dalam berkolaborasi dan komunikasi antara kolaborator khususnya dalam menangani permasalahan. masalah tersebut seperti dalam menangani permasalahan pada kode program, miskomunikasi antara kolaborator, dan penentuan masalah.
 
 **2. Apa perbedaan dari git merge dan git merge --squash?**
-git merge hanya akan menggabungkan file commit terbaru sesuai dengan urutannya dari branch yang ada, sedangkan git merge --squash akan menggabungkan semua file commit yang ada pada branch menjadi satu commit.
+git merge hanya akan menggabungkan setiap commit dari branch yang ada ke master semuanya secara masing-masing dan langsung, sedangkan git merge --squash akan menggabungkan semua file commit yang ada pada branch menjadi satu commit terlebih dahulu baru kemudian digabungkan ke master.
 
 **3. Apa keunggulan menggunakan Version Control System seperti Git dalam pengembangan suatu aplikasi?**
 Dengan VCS akan mudah dalam mengetahui perkembangan secara detail dari pengembangan aplikasi yang sedang dibuat seperti info atau log perubahan-perubahan yang terjadi pada program aplikasi dan file progam dapat disimpan secara online dengan bantuan VCS. Selain itu, VCS juga membantu pengembang dalam mengembangkan aplikasi secara bersama-sama sehingga dapat terhindar dari konflik.
