@@ -34,3 +34,9 @@ Perbedaannya yaitu @RequestParam mengekstrak value yang dimasukkan dari query st
 ### What I did not understand
 Bagaimana proyek java dengan frame work Spring Boot bekerja secara keseluruhan. Selain itu saya juga masih belum familiar dengan GitHub.
 
+referensi:
+https://docs.github.com/en/github/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges
+https://www.upgrad.com/blog/spring-boot-projects-topics-for-beginners/
+https://medium.com/@acep.abdurohman90/mengenal-maven-sebagai-java-build-tools-5ba752f75812
+https://www.baeldung.com/spring-requestparam-vs-pathvariable
+https://en.wikipedia.org/wiki/List_of_build_automation_software
