@@ -3,7 +3,7 @@
 * **Rizky Pratama Nataprawira** - *1906318514* - *B*
 
 ---
-## Totorial 2
+## Tutorial 2
 ### What I have learned today
 Pada tutorial 2 ini, saya mempelajari bagaimana proses routing URL pada java spring boot dan bagaimana mengambil data dari query atau path yang dimasukkan oleh pengguna. Selain itu saya mempelajari pembuatan setter dan getter pada class object. Selain itu saya mempelajarin bagaimana menghandle jika pengguna salah memasukkan alamat url.
 
@@ -28,7 +28,7 @@ Website ini hanya menyediakan pencarian dengan id Agensi, dengan begitu sesuai d
 
 Sertakan juga bukti screenshotmu
 Akan menampilkan semua Agensi bersamaan dengan agensi yang ditambah. Agensi yang bertambah sesuai dengan apa yang telah saya masukkan.
-![Foto](https://ibb.co/jhfDGXx)
+![Screen Shot PErtanyaan 5](https://i.ibb.co/mJT4tWY/image.png)
 
 ### What I did not understand
 Untuk materi tutorial ini saya sudah cukup mengerti
