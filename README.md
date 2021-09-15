@@ -3,7 +3,37 @@
 * **Rizky Pratama Nataprawira** - *1906318514* - *B*
 
 ---
+## Totorial 2
+### What I have learned today
+Pada tutorial 2 ini, saya mempelajari bagaimana proses routing URL pada java spring boot dan bagaimana mengambil data dari query atau path yang dimasukkan oleh pengguna. Selain itu saya mempelajari pembuatan setter dan getter pada class object. Selain itu saya mempelajarin bagaimana menghandle jika pengguna salah memasukkan alamat url.
 
+### Pertanyaan
+**Pertanyaan 1: Cobalah untuk menambahkan sebuah Agensi dengan mengakses link berikut: http://localhost:8080/agensi/add?idAgensi=1&namaAgensi=Papa%20APAP&alamat=Maung%20Fasilkom&noTelepon=081xxx Apa yang terjadi? Jelaskan mengapa haltersebut dapat terjadi**
+
+Link tidak bisa di akses dan akan muncul error Whitelabel Error Page, dengan error resolving template[add-agensi]. Hal ini terjadi karena file template add-agensi.html untuk menanangani path ini belum dibuat sehingga terjadi error.
+
+**Pertanyaan 2: Menurut kamu anotasi @Autowired pada class Controller tersebut merupakan implementasi dari konsep apa? Dan jelaskan secara singkat cara kerja @Autowired tersebut dalam konteks service dan controller yang telah kamu buat**
+
+@Autowired merupakan implementasi dari konsep dependency injection. Dengan Autowired akan menginject depensi yang ada pada service di controller secara otomatis. Sehingga tidak perlu membuat setter method atau argumen di constructor.
+
+**Pertanyaan 3: Cobalah untuk menambahkan sebuah Agensi dengan mengakses link berikut: http://localhost:8080/agensi/add?idAgensi=1&namaAgensi=Papa%20APAP&alamat=Maung%20Fasilkom Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi.**
+
+Error akan terjadi saat mengakses link tersebut. hal tersebut terjadi karena pada link tidak ada parameter masukan nomor telepon yang bernilai true sehingga wajib ada. Dengan demikian terjadi error.
+
+**Pertanyaan 4: Jika Papa APAP ingin melihat Travel Agensi dengan nama Papa APAP,link apa yang harus diakses?**
+Website ini hanya menyediakan pencarian dengan id Agensi, dengan begitu sesuai dengan input agensi yang telah dilakukan sebelumnya, Papa APAP memiliki idAgensi 1, maka untuk mencarinya dapat melalui link: http://localhost:8080/agensi/view?idAgensi=1
+
+
+**Pertanyaan 5: Tambahkan 1 contoh Travel Agensi lainnya sesukamu. Lalu cobalah untuk mengakses http://localhost:8080/agensi/viewAll , apa yang akan ditampilkan?**
+
+Sertakan juga bukti screenshotmu
+Akan menampilkan semua Agensi bersamaan dengan agensi yang ditambah. Agensi yang bertambah sesuai dengan apa yang telah saya masukkan.
+![Foto](https://ibb.co/jhfDGXx)
+
+### What I did not understand
+Untuk materi tutorial ini saya sudah cukup mengerti
+
+---
 ## Tutorial 1
 ### What I have learned today
 Pada Tutorial 1, Saya mempelajari bagaimana membuat suatu web menggunakan framework Spring Boot dan juga penggunaan GitHub. Penggunaan Spring Boot yang saya pelajari diantara lain yaitu bagaimana pembuatan project baru, set up Spring Boot, direktori pada project, dan menjalankan program. Pada GitHub, saya mempelajari bagaimana pembuatan repository, menhubungkan repository GitHub dan lokal, pembuatan branch baru, dan melakukan Commit, Push, dan Pull Request.
@@ -34,9 +64,11 @@ Perbedaannya yaitu @RequestParam mengekstrak value yang dimasukkan dari query st
 ### What I did not understand
 Bagaimana proyek java dengan frame work Spring Boot bekerja secara keseluruhan. Selain itu saya juga masih belum familiar dengan GitHub.
 
+---
 ### referensi:
 https://docs.github.com/en/github/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges
 https://www.upgrad.com/blog/spring-boot-projects-topics-for-beginners/
 https://medium.com/@acep.abdurohman90/mengenal-maven-sebagai-java-build-tools-5ba752f75812
 https://www.baeldung.com/spring-requestparam-vs-pathvariable
 https://en.wikipedia.org/wiki/List_of_build_automation_software
+https://software.endy.muhardin.com/java/memahami-dependency-injection/
