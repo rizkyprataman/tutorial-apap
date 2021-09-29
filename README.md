@@ -1,6 +1,36 @@
 # Tutorial APAP
 ## Authors
 * **Rizky Pratama Nataprawira** - *1906318514* - *B*
+---
+## Tutorial 3
+### What I have learned today
+Pada tutorial 3 ini, saya mempelajari bagaimana penggunaan database pada project spring dan juga membuat model. Selain itu saya mempelajari bagaimana membuat setter, getter, dan constructor dengan cepat menggunakan library Lombok. Kemudian, saya juga saya mempelajari  saya mempelajari bagaimana penggunaan JPA Repository.
+
+### Pertanyaan
+**1. Tolong jelaskan secara singkat apa kegunaan dari anotasi-anotasi yang ada pada model (@AllArgsConstructor, @NoArgsConstructor, @Setter, @Getter, @Entity, @Table)**
+@AllArgsConstructor berguna untuk me-generate default constructor dengan argumen. Constructor ini akan mempunyai semua parameter untuk setiap field.
+@NoArgsConstructor berguna untuk me-generate default constructor yang tidak ada argumen. Constructor ini tidak memiliki parameter sama sekali.
+@Setter berguna untuk me-generate method Gette secara otomatis pada setiap private filed di dalam class tanpa perlu membuat method setter untuk setiap field dan akan menyingkan kode pada program.
+@Getter berguna untuk me-generate method Getter secara otomatis pada setiap private filed di dalam class tanpa perlu membuat method Getter untuk setiap field dan akan menyingkan kode pada program.
+@Entity berguna untuk menandakan bahwa class tersebut merupakan entitas.
+@Table untuk pembuatan tabel di dalam database dengan properti name yang digunakan untuk memberi nama tabel pada databse.
+
+**2. Pada class TravelAgensiDb, terdapat method findByNoAgensi, apakah kegunaan dari method tersebut?**
+Method tersebut berguna sebagai untuk mendapatkan Agensi berdasarkan parameter NoAgensi dari database. findBy merupakan fitur yang disediakan oleh JPA Repository.
+
+**3. Jelaskan perbedaan kegunaan dari anotasi @JoinTable dan @JoinColumn**
+@JoinTable akan menyimpan relasi antara dua tabel pada suatu tabel. Sedangkan @JoinColumn akan mendefinisikan kolom pada tabel yang memiliki foreign key dari entitas tabel lain. Dengan begitu @JoinTable akan menyimpan kedua id pada tabel yang berbeda, sedangkan @JoinColumn akan menyimpan id dari tabel lain pada suatu kolom.
+
+**4. Pada class TourGuideModel, digunakan anotasi @JoinColumn pada atribut agensi, apa kegunaan dari name, referencedColumnName, dan nullable dalam anotasi tersebut? dan apa perbedaan nullable dan penggunaan anotasi @NotNull**
+name berguna untuk menentukan nama dari kolom foreign key, referencedColumnName merupakan nama kolom yang direferensikan darii entitas tabel lain, dan nullable apakah kolom foreign key tersebut dapat memiliki nilai null. Perbedaan dari nullable dan @NotNull adalah nullable bisa bernilai true atau false, jika true artinya boleh ada nilai null, jika false artinya tidak boleh null sedangkan @NotNull menandakan bahwa suatu variabel tidak dibolehkan null.
+
+**5. Jelaskan kegunaan FetchType.LAZY, CascadeType.ALL, dan FetchType.EAGER**
+FetchType.LAZY berguna untuk  me-fetch object parent tanpa me-load semua collection object dari child. collection object dari child dapat di-load menggunakan getter method.
+CascadeType.ALL menandakan bahwa semua operasi yang dilakukan pada suatu entitas akan mempengaruhi entitas lain yang terkait.
+FetchType.EAGER berguna untuk me-fetch object parent sekaligus me-load semua collection object dari child. 
+
+### What I did not understand
+Untuk materi tutorial ini saya sudah cukup mengerti
 
 ---
 ## Tutorial 2

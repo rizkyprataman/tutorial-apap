@@ -9,5 +9,4 @@ public class PergipergiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PergipergiApplication.class, args);
 	}
-
 }
