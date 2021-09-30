@@ -28,14 +28,36 @@
                     <br><br>
 
                     Waktu Buka : <br>
-                    <input required class="form-control" type="time" name="waktuBuka" />
+                    <input class="form-control" type="time" name="waktuBuka" />
                     <br><br>
 
                     Waktu Tutup : <br>
-                    <input required class="form-control" type="time" name="waktuTutup" />
+                    <input class="form-control" type="time" name="waktuTutup" />
                     <br><br>
-
-                    <button class="btn btn-primary" type="submit">Submit</button>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Destinasi</th>
+                                <th><button class="btn btn-primary" type="submit" name="addRow">addrow</button> </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="destinasi, iterationStatus : *{listDestinasi}">
+                                <td>
+                                    <select th:field="*{listDestinasi[__${iterationStatus.index}__].noDestinasi}" class="form-control">
+                                        <option th:each="destinasi : ${listDestinasi}"
+                                                th:text="${destinasi.negaraDestinasi}"
+                                                th:value="${destinasi.noDestinasi}">
+                                        </option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <button  class="btn btn-danger" th:value="${iterationStatus.index}" type="submit" name="deleteRow">hapus</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn btn-primary" type="submit" name="save">Submit</button>
                     <a class="btn btn-primary" href="/">Home</a>
                 </form>
             </div>

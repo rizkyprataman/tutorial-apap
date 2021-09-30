@@ -25,15 +25,20 @@ public class TravelAgensiController {
     @Qualifier("travelAgensiServiceImpl")
     @Autowired
     private TravelAgensiService travelAgensiService;
+    @Qualifier("destinasiServiceImpl")
+    @Autowired
     private DestinasiService destinasiService;
 
     @GetMapping("/agensi/add")
     public String addAgensiFormPage(Model model){
+        List<DestinasiModel> listDestinasiExist = destinasiService.getListDestinasi();
         model.addAttribute("agensi", new TravelAgensiModel());
+        model.addAttribute("listDestinasiExist", listDestinasiExist);
+
         return "form-add-agensi";
     }
 
-    @PostMapping("/agensi/add")
+    @PostMapping(value = "/agensi/add", params = "save")
     public String addAgensiSubmitPage(
         @ModelAttribute TravelAgensiModel agensi,
         Model model
@@ -43,6 +48,42 @@ public class TravelAgensiController {
         return "add-agensi";
     }
 
+    @PostMapping(value = "/agensi/add", params = "addRow")
+    public String addrow(
+        @ModelAttribute TravelAgensiModel agensi,
+        BindingResult bindingResult,
+        Model model
+    ){
+        List<DestinasiModel> listDestinasiexist = destinasiService.getListDestinasi();
+
+        if(agensi.getListDestinasi() ==  null){
+            agensi.setListDestinasi(new ArrayList<DestinasiModel>());;
+        }
+        
+        List<DestinasiModel> listDestinasi = agensi.getListDestinasi();
+        DestinasiModel destinasi = new DestinasiModel();
+        listDestinasi.add(destinasi);
+
+        model.addAttribute("agensi", agensi);
+        model.addAttribute("listDestinasi", listDestinasiexist);
+        return "form-add-agensi";
+    }
+
+    @PostMapping(value = "/agensi/add", params = "deleteRow")
+    public String addAgensiDeleteRow(
+        @ModelAttribute TravelAgensiModel agensi,
+        final BindingResult bindingResult,
+        final HttpServletRequest req,
+        Model model
+    ){
+        List<DestinasiModel> listDestinasiexist = destinasiService.getListDestinasi();
+        final Integer rowId = Integer.valueOf(req.getParameter("deleteRow"));
+        agensi.getListDestinasi().remove(rowId.intValue());
+        
+        model.addAttribute("agensi", agensi);
+        model.addAttribute("listDestinasi", listDestinasiexist);
+        return "form-add-agensi";
+    }
 
     @GetMapping("/agensi/viewall")
     public String listAgensi(Model model){
