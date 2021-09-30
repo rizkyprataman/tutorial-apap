@@ -1,17 +1,22 @@
 package apap.tutorial.pergipergi.controller;
 
+import apap.tutorial.pergipergi.model.DestinasiModel;
 import apap.tutorial.pergipergi.model.TourGuideModel;
 import apap.tutorial.pergipergi.model.TravelAgensiModel;
+import apap.tutorial.pergipergi.service.DestinasiService;
 import apap.tutorial.pergipergi.service.TravelAgensiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import java.time.LocalTime;
 
 import java.util.List;
+import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.constraints.Null;
 
 @Controller
@@ -20,6 +25,7 @@ public class TravelAgensiController {
     @Qualifier("travelAgensiServiceImpl")
     @Autowired
     private TravelAgensiService travelAgensiService;
+    private DestinasiService destinasiService;
 
     @GetMapping("/agensi/add")
     public String addAgensiFormPage(Model model){
@@ -37,6 +43,7 @@ public class TravelAgensiController {
         return "add-agensi";
     }
 
+
     @GetMapping("/agensi/viewall")
     public String listAgensi(Model model){
         List<TravelAgensiModel> listAgensi = travelAgensiService.getListAgensi();
@@ -52,8 +59,10 @@ public class TravelAgensiController {
         TravelAgensiModel agensi = travelAgensiService.getAgensiByNoAgensi(noAgensi);
         if(agensi!=null){
             List<TourGuideModel> listTourGuide = agensi.getListTourGuide();
+            List<DestinasiModel> listDestinasi = agensi.getListDestinasi();
             model.addAttribute("agensi", agensi);
             model.addAttribute("listTourGuide", listTourGuide);
+            model.addAttribute("listDestinasi", listDestinasi);
             return "view-agensi";
         }
         return "notexist-agensi-guide";
@@ -90,7 +99,6 @@ public class TravelAgensiController {
         return "viewall-agensi";
     }
 
-    //no 4
     @GetMapping("/agensi/delete/{noAgensi}")
     public String deleteGuideFormPage(
         @PathVariable Long noAgensi,
@@ -114,4 +122,7 @@ public class TravelAgensiController {
              return "gagal-delete-agensi";
         }
     }
+    
+
+
 }

@@ -83,28 +83,46 @@ public class TourGuideController {
         }
 
         //No 3
-        @GetMapping("/tour-guide/delete/{noAgensi}/{noGuide}")
-        public String deleteGuideFormPage(
-            @PathVariable Long noAgensi,
-            @PathVariable Long noGuide,
+        // @GetMapping("/tour-guide/delete/{noAgensi}/{noGuide}")
+        // public String deleteGuideFormPage(
+        //     @PathVariable Long noAgensi,
+        //     @PathVariable Long noGuide,
+        //     Model model
+        // ){
+        //     TravelAgensiModel agensi = travelAgensiService.getAgensiByNoAgensi(noAgensi);
+        //     TourGuideModel guide = tourGuideService.getTourGuideByNoGuide(noGuide);
+        //     if(agensi == null || guide == null){
+        //         return "notexist-agensi-guide";
+        //     }
+        //     LocalTime waktuTutup = agensi.getWaktuBuka();
+        //     LocalTime waktuBuka = agensi.getWaktuTutup();
+        //     LocalTime sekarang = LocalTime.now();
+        //     if(sekarang.compareTo(waktuBuka)>0 || sekarang.compareTo(waktuTutup)<0){
+        //         tourGuideService.deleteTourGuide(guide);
+        //         return "delete-guide";
+        //     }
+        //     else{
+        //         model.addAttribute("noGuide", guide.getNoTourGuide());
+        //          return "gagal-delete-guide";
+        //     }
+        // }
+        @PostMapping("/tour-guide/delete")
+        public String deleteTourGuideSubmit(
+            @ModelAttribute TravelAgensiModel agensi,
             Model model
-        ){
-            TravelAgensiModel agensi = travelAgensiService.getAgensiByNoAgensi(noAgensi);
-            TourGuideModel guide = tourGuideService.getTourGuideByNoGuide(noGuide);
-            if(agensi == null || guide == null){
-                return "notexist-agensi-guide";
-            }
-            LocalTime waktuTutup = agensi.getWaktuBuka();
-            LocalTime waktuBuka = agensi.getWaktuTutup();
-            LocalTime sekarang = LocalTime.now();
-            if(sekarang.compareTo(waktuBuka)>0 || sekarang.compareTo(waktuTutup)<0){
-                tourGuideService.deleteTourGuide(guide);
+        ) {
+            if(travelAgensiService.isClosed(agensi.getWaktuBuka(), agensi.getWaktuTutup())){
+                for(TourGuideModel tourGuide : agensi.getListTourGuide()) {
+                    tourGuideService.deleteTourGuide(tourGuide);
+                }
+                model.addAttribute("noAgensi", agensi.getNoAgensi());
                 return "delete-guide";
             }
-            else{
-                model.addAttribute("noGuide", guide.getNoTourGuide());
-                 return "gagal-delete-guide";
-            }
+            
+            
+            return "gagal-delete-guide";
         }
+
+
     
 }

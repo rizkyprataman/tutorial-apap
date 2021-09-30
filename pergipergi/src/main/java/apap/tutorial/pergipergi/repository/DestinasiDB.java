@@ -1,13 +1,12 @@
 package apap.tutorial.pergipergi.repository;
 
 import apap.tutorial.pergipergi.model.DestinasiModel;
-//import apap.tutorial.pergipergi.model.TravelAgensiModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-//import java.util.Optional;
-
+ 
+import java.util.Optional;
+ 
 @Repository
-public interface DestinasiDB extends JpaRepository<DestinasiModel,Long> {
-    
+public interface DestinasiDB extends JpaRepository<DestinasiModel, Long> {
+  Optional<DestinasiModel> findByNegaraDestinasi(String negaraDestinasi);
 }
