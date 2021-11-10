@@ -17,7 +17,6 @@ import java.util.List;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.constraints.Null;
 
 @Controller
 public class TravelAgensiController {

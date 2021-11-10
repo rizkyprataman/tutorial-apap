@@ -53,3 +53,7 @@
             </form>
         </div>
     </nav>
+    <footer th:fragment="footer">
+        <p th:text="${#temporals.format(localDateTime, 'dd-MM-yyyy HH:mm')}"></p>
+    </footer>
+</body>
