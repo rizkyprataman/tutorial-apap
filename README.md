@@ -2,6 +2,21 @@
 ## Authors
 * **Rizky Pratama Nataprawira** - *1906318514* - *B*
 ---
+## Tutorial 4
+###  What I have learned today
+Pada tutorial 4 ini saya mempelajari bagaimana view pada springboot dan penggunaan thymeleaf. 
+
+### Pertanyaan
+**1. Jelaskan perbedaan th:include dan th:replace!**
+th:replace akan mengganti tag yang ada dengan tag yang didefinisikan fragment dan memasukkan konten fragment tersebut.
+th:include akan memasukkan fragment ke  dalam bagian tag.
+**2. Jelaskan apa fungsi dari th:object!**
+th:object berguna untuk menandakan object yang dimaksud dari form yang diisi dan disubmit.Dengan begitu akan memudahkan dalam pembuatan form dan mendefinisikan objek pada form.
+
+**3. Jelaskan perbedaan dari * dan $ pada saat penggunaan th:object! Kapan harus dipakai?**
+ "*" akan menggunakan sebagian atribut dari th:object yang sudah sudah ada, sedangkan "$" akan menggunakan seluruh atribut dari th:object.
+ *= akan mengevaluasi atribut atau varible dari th:object yang sudah di deklarasi sebelumnya $= akan mengevaluasi keseluruhan atribut atau variabel pada th:object.
+---
 ## Tutorial 3
 ### What I have learned today
 Pada tutorial 3 ini, saya mempelajari bagaimana penggunaan database pada project spring dan juga membuat model. Selain itu saya mempelajari bagaimana membuat setter, getter, dan constructor dengan cepat menggunakan library Lombok. Kemudian, saya juga saya mempelajari  saya mempelajari bagaimana penggunaan JPA Repository.
