@@ -2,6 +2,37 @@
 ## Authors
 * **Rizky Pratama Nataprawira** - *1906318514* - *B*
 ---
+## Tutoriak 6
+**1. Jelaskan secara singkat perbedaan Otentikasi dan Otorisasi! Di bagian mana (dalam kode yang telah anda buat) konsep tersebut diimplementasi?**
+Otentikasi merupakan proses dalam melakukan verifikasi pada informasi seseorang ketika seseorang mengakses sistem. Otorisasi merupakan proses dalam memeriksa apakah seseorang memiliki izin untuk mengakses bagian sistem yang spesifik.
+
+Konsep tersebut diimplementasi pada package apap.tutorial.pergipergi.security, khususnya pada WebSecurityConfig.java.
+Untuk otentikasi terdapat pada bagian:
+@Autowired
+public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception{
+    auth.userDetailsService(userDetailsService).passwordEncoder(encoder());
+}
+Untuk otorisasi terdapat pada bagian:
+http
+        .authorizeRequests()
+        .antMatchers("/css/**").permitAll()
+        .antMatchers("/js/**").permitAll()
+        .antMatchers("/user/view-all").hasAuthority("Admin")
+        .antMatchers("/user/add").hasAuthority("Admin")
+        .antMatchers("/user/delete/**").hasAuthority("Admin")
+        .antMatchers("/destinasi/add").hasAuthority("Agen")
+
+**2. Apa itu BCryptPasswordEncoder? Jelaskan secara singkat cara kerja dan tujuannya.**
+BCryptPasswordEncoder merupakan password encoder yang digunakan pada modul spring boot security dalam melakukan decoding, encoding, dan validasi password yang berguna untuk melakukan enkripsi password sehingga data password tidak dapat diketahui. 
+
+Proses yang dilakukannya yaitu BCryptPasswordEncoder mengenkripsi raw password dan menyimpannya pada database. Jika pengguna mengakses kembali, pengguna memasukan password dan BCryptPasswordEncoder akan me-encode password tersebut dan mencocokannya dengan password yang terenkripsi padaa database.
+**3. Apakah penyimpanan password sebaiknya menggunakan encryption atau hashing? Mengapa demikian**
+Penyimpanan yang baik dilakukan yaitu hashing. Hal tersebut karena hashing merupakan fungsi satu arah sehingga seseorang tidak dapat mengetahui password yang sudah dihash. Sedangkan encryption merupakan fungsi dua arah sehingga password yang sudah terenkripsi dapat dengan mudah dikembalikan dan password dapat diketahui.
+**4. Jelaskan secara singkat apa itu UUID beserta penggunaannya!**
+UUID atau universally unique identifier adalah kombinasi 32 karakter yang dibuat secara acak dan unik dengan algoritma tertentu yang berguna dalam mengidentifikasi objek pada internet.
+**5. 5. Apa kegunaan class UserDetailsServiceImpl.java? Mengapa harus ada class tersebut**
+class UserDetailsServiceImpl.java berguna sebagai interface untuk mengambil data yang berkaitan dengan pengguna, khususnya dalam otentikasi dan otorisasi. Class ini harus ada karena terdapat satu method loadUserByUsername() yang berguna untuk melakukan kustomisasi proses pencarian pengguna.
+---
 ## Tutorial 4
 ###  What I have learned today
 Pada tutorial 4 ini saya mempelajari bagaimana view pada springboot dan penggunaan thymeleaf. 

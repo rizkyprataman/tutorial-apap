@@ -11,14 +11,30 @@
 
     <div class="d-flex justify-content-center">
         <div class="m-4">
+            <h2 th:text="'Hello '+${#httpServletRequest.remoteUser}+'!'">Masuk Sebagai</h2>
             <h2>Selamat datang di PergiPergi!</h2>
             <div class="d-flex justify-content-center">
                 <a th:href="@{/agensi/viewall}" class="mx-2 btn btn-primary">View All Agensi</a>
-                <a th:href="@{/agensi/add}" class="mx-2 btn btn-outline-primary">Add Agensi</a>
+                <a th:href="@{/agensi/add}" class="mx-2 btn btn-primary">Add Agensi</a>
             </div>
             <div class="my-3 d-flex justify-content-center">
                 <a th:href="@{/destinasi/viewall}" class="mx-2 btn btn-primary">View All Destinasi</a>
-                <a th:href="@{/destinasi/add}" class="mx-2 btn btn-outline-primary">Add Destinasi</a>
+                <td>
+                    <span th:if="${role == 'Agen'}">
+                        <a th:href="@{/destinasi/add}" class="mx-2 btn btn-primary">Add Destinasi</a>
+                    </span>
+                </td>
+            </div>
+            <div class="my-3 d-flex justify-content-center">
+                <td>
+                    <span th:if="${role == 'Admin'}">
+                        <a th:href="@{/user/add}" class="mx-2 btn btn-primary">Tambah user</a>
+                        <a th:href="@{/user/view-all}" class="mx-2 btn btn-primary">lihat semua user</a>
+                    </span>
+                </td>
+            </div>
+            <div class="my-3 d-flex justify-content-center">
+                <a th:href="@{/user/update-password}" class="mx-2 btn btn-primary">Update password</a>
             </div>
         </div>
     </div>

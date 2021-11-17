@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>PergiPergi</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
+    </head>    
+<body>
+<nav th:replace="fragments/fragment :: navbar('admin')"></nav>
+<div class="container">
+        <div class="card-body">
+            <h2>USER</h2>
+            <a class="btn btn-primary" th:href="@{/user/add/}">Add User</a>
+            <div class="justify-content-center">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>email</th>
+                            <th>Nama</th>
+                            <th>Username</th>
+                            <th>Role</th>
+                            <th>Delete</th>
+                        </tr>    
+                        </thead>
+                        <tbody>
+
+                        <tr th:each="user, iterationStatus : ${listUserModel}"
+                            th:style="${iterationStatus.even} ? 'font-weight:bold;'">
+                            <td th:text="${iterationStatus.count}"></td>
+                            <td th:text="${user.email}"></td>
+                            <td th:text="${user.nama}"></td>
+                            <td th:text="${user.username}"></td>
+                            <td th:text="${user.role.Role}"></td>
+                            <td>
+                                <a class="btn btn-danger" th:href="@{/user/delete/} + ${user.username}">Delete</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                <br>
+                <a class="btn btn-primary" href="/">Home</a>
+            </div>
+        </div>
+</div>
+
+</body>
+</html>
