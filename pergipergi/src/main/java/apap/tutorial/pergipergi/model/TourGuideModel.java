@@ -33,6 +33,9 @@ public class TourGuideModel implements Serializable{
     @Column(name="jenis_kelamin", nullable = false)
     private Integer jenisKelamin;
 
+    @Column()
+    private Integer umur;
+
     //Relasi dengan AgensiModel
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "no_agensi", referencedColumnName = "noAgensi", nullable = false)
