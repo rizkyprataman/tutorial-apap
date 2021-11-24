@@ -2,6 +2,21 @@
 ## Authors
 * **Rizky Pratama Nataprawira** - *1906318514* - *B*
 ---
+## Tutorial 3
+### What I have learned today
+
+### Pertanyaan
+**1. Jelaskan apa yang Anda lakukan di latihan dalam satu paragraf per-soal. Berikan screenshot sebagai ilustrasi dari apa yang Anda jelaskan.**
+**2. Menurut pemahaman kamu selama pengerjaan tutorial ini, apa perbedaan antara state dan props?**
+**3. Menurut kamu, apakah sebaiknya kita menggunakan component (e.g. List, Item) dalam React? sebutkan alasannya.**
+**4. Apa perbedaan class component dan functional component?**
+**5. Dalam react, apakah perbedaan component dan element?**
+
+
+### What I did not understand
+
+
+---
 ## Tutoriak 6
 **1. Jelaskan secara singkat perbedaan Otentikasi dan Otorisasi! Di bagian mana (dalam kode yang telah anda buat) konsep tersebut diimplementasi?**
 Otentikasi merupakan proses dalam melakukan verifikasi pada informasi seseorang ketika seseorang mengakses sistem. Otorisasi merupakan proses dalam memeriksa apakah seseorang memiliki izin untuk mengakses bagian sistem yang spesifik.
