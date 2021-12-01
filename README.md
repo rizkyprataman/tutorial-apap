@@ -2,7 +2,63 @@
 ## Authors
 * **Rizky Pratama Nataprawira** - *1906318514* - *B*
 ---
-## Tutoriak 6
+## Tutorial 7
+### What I have learned today
+Pada tutorial ini saya mempelajari bagaimana mengimlementasi react js
+
+### Pertanyaan
+**1. Jelaskan apa yang Anda lakukan di latihan dalam satu paragraf per-soal. Berikan screenshot sebagai ilustrasi dari apa yang Anda jelaskan.**
+
+**Soal 1**
+
+Saya menambahkan fungsi handleDeleteItem yang berguna untuk menghapus produk pada cart dengan mengubah properti incart menjadi false, memanggil method updateShopItem untuk mengubah properti incart-nya menjadi false, menghapusnya dari list dengan method splice, dan mengupdate
+
+![Screen Shot Soal 1](https://i.ibb.co/pxKQCdX/soal1.png)
+
+**Soal 2**
+
+Saya menambahkan satu bari kode pada handleAddItemToCart untuk mengurangi state balance ketika menambah barang dan pada handleDeleteItem untuk menambah balance ketika barang dihapus dari cart.
+
+pada handleAddItemToCart:
+
+![Screen Shot Soal 2a](https://i.ibb.co/QP6Mrnr/soal2.png)
+
+Pada handleDeleteItem:
+
+![Screen Shot Soal 2b](https://i.ibb.co/r6M2JgF/soal2delete.png)
+
+**Soal 3**
+
+Saya membuat condition baru pada fungsi handleAddItemToCart dengan membandingkan jumlah balance sekarang dengan harga item, jika masuk kedalam kondisi tersebut maka alert akan muncul.
+
+![Screen Shot Soal 3](https://i.ibb.co/R7zRFkW/soal3.png)
+
+**2. Menurut pemahaman kamu selama pengerjaan tutorial ini, apa perbedaan antara state dan props?**
+
+Nilai pada state hanya digunakan di dalam komponen. Sedangkan nilai pada props digunakan pada antar komponen (dari komponen parent ke child).
+
+**3. Menurut kamu, apakah sebaiknya kita menggunakan component (e.g. List, Item) dalam React? sebutkan alasannya.**
+
+Iya, sebaiknya menggunakan component. karena dengan component, kode yang dibuat dapat digunakan kembali dengan memanggilnya pada bagian yang membutuhkan komponen tersebut sehingga menjadi lebih efisien. 
+
+**4. Apa perbedaan class component dan functional component?**
+
+Class component: merupakan komponen stateful yang mengontrol bagaimana state berubah dan implementasi logika komponen. 
+
+Functional component merupakan fungsi JavaScript yang disebut komponen stateless karena mereka hanya menerima dan mengembalikan data untuk dirender ke DOM. 
+
+
+**5. Dalam react, apakah perbedaan component dan element?**
+
+React Element merupakan objek sederhana yang menggambarkan atribut atau properti. React Element adalah objek yang immutable (tidak dapat dilakukan perubahan pada attribute dan children) dan tidak dapat mengimplementasikan metode apa pun.
+
+React Component merupakan fungsi atau kelas yang menerima input dan mengembalikan elemen React. komponen dapat menyimpan referensi ke node DOM dan ke instance komponen child. 
+
+### What I did not understand
+Masih belum memahami react js secara keseluruhan karena baru mempelajarinya sekarang.
+
+---
+## Tutorial 6
 **1. Jelaskan secara singkat perbedaan Otentikasi dan Otorisasi! Di bagian mana (dalam kode yang telah anda buat) konsep tersebut diimplementasi?**
 Otentikasi merupakan proses dalam melakukan verifikasi pada informasi seseorang ketika seseorang mengakses sistem. Otorisasi merupakan proses dalam memeriksa apakah seseorang memiliki izin untuk mengakses bagian sistem yang spesifik.
 
@@ -156,3 +212,5 @@ https://medium.com/@acep.abdurohman90/mengenal-maven-sebagai-java-build-tools-5b
 https://www.baeldung.com/spring-requestparam-vs-pathvariable
 https://en.wikipedia.org/wiki/List_of_build_automation_software
 https://software.endy.muhardin.com/java/memahami-dependency-injection/
+https://www.telerik.com/blogs/react-class-component-vs-functional-component-how-choose-whats-difference
+https://stackoverflow.com/questions/30971395/difference-between-react-component-and-react-element
