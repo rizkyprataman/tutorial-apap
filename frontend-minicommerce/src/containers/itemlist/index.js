@@ -198,7 +198,7 @@ async handleAddCartItem(event, item) {
     );
     if((targetInd < 0) && (parseInt(this.state.cartQuantity)  > 0)){
       if((parseInt(item.quantity)<parseInt(this.state.cartQuantity)) ){
-        alert("stok tidak memadai")
+        alert("stok tidak memadai");
       }
       else{
         await APIConfig.post("/cart", data);
@@ -219,7 +219,7 @@ async handleAddCartItem(event, item) {
           this.loadDataCart();
       }
       else{
-        alert("stok tidak memadai")
+        alert("stok tidak memadai");
       }
     }
     
