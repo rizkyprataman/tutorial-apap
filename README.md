@@ -2,6 +2,48 @@
 ## Authors
 * **Rizky Pratama Nataprawira** - *1906318514* - *B*
 ---
+## Tutorial 8
+### What I have learned today
+Pada tutorial ini saya mempelajari proses pemrograman mulai dari back-end hingga front-end
+
+### Pertanyaan
+**1. Ceritakan langkah - langkah yang kalian lakukan untuk solve LATIHAN no.1, dan mengapa kalian melakukan langkah - langkah tersebut?**
+
+Latihan satu sudah terhandle karena sudah ada bagian kode yang mengubah state menjadi kosong setelah submit dengan kode program:
+
+this.setState({
+            id: "",
+            title: "",
+            price: 0,
+            description: "",
+            category: "",
+            quantity: 0
+        })
+
+**2. Jelaskan fungsi dari async dan await!**
+
+async berguna untuk memastikan bahwa fungsi mengembalikan janji, dan membungkus non-janji di dalamnya. Await berkerja di dalam async dan berfungsi agar JavaScript menunda eksekusi fungsi dan menunggu sampai janji selesai dan mengembalikan hasilnya. 
+
+
+**3. Masukkan jawaban dari Screenshot yang diperintahkan di halaman 9 pada Component Lifecycle pada pertanyaan ini.**
+
+https://docs.google.com/document/d/1rdAuOp6_CirvBG8PAzOjYNpzTtsXtTaVWoTy68xrPXI/edit?usp=sharing
+
+**4. Jelaskan fungsi dari componentDidMount, shouldComponentUpdate, componentDidUpdate, componentWillReceiveProps, componentWillUnmount.**
+
+Notes : Penjelasan harus mencantumkan “kapan fungsi dipanggil” dan “use case apa saja yang biasanya menggunakan lifecycle method tersebut”.
+
+componentDidMount: Fungsi dipanggil langsung setelah komponen dipasang/dibuat (dimasukan ke dalam tree). Method ini dipanggil jika perlu memuat data dari remote endpoint.
+
+shouldComponentUpdate: Fungsi ini dipanggil ketika terdapat props atau state baru pada komponen. usecase  ketika ingin Mengontrol dengan tepat kapan komponen akan dirender ulang. 
+
+componentDidUpdate: Fungsi dipanggil ketika komponen terupdate. Use casenya yaitu ketika memperbarui DOM sebagai respons terhadap perubahan prop atau status. 
+
+componentWillReceiveProps: Fungsi dipanggil ketika state pada komponen akan diupdate dengan nilai props yang baru. Use casenya yaitu bertindak pada perubahan prop tertentu untuk memicu transisi status. 
+
+componentWillUnmount: Fungsi dipanggi ketika komponen akan dicabut/dihapus. use case ketika ingin membersihkan semua hal yang tertinggal dari komponen.
+
+---
 ## Tutorial 7
 ### What I have learned today
 Pada tutorial ini saya mempelajari bagaimana mengimlementasi react js
@@ -214,3 +256,6 @@ https://en.wikipedia.org/wiki/List_of_build_automation_software
 https://software.endy.muhardin.com/java/memahami-dependency-injection/
 https://www.telerik.com/blogs/react-class-component-vs-functional-component-how-choose-whats-difference
 https://stackoverflow.com/questions/30971395/difference-between-react-component-and-react-element
+https://reactjs.org/docs/react-component.html#componentdidmount
+https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1
+https://medium.com/codeacademia/apa-itu-component-lifecycle-di-react-bfcb64f64e0e
